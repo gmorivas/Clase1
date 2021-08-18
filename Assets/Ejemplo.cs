@@ -90,7 +90,6 @@ public class Ejemplo : MonoBehaviour
         // print(Time.deltaTime);
         transform.Translate(velocidad * h * Time.deltaTime, velocidad * v * Time.deltaTime, 0, Space.World);
 
-
     }
 
     private void LateUpdate()
@@ -124,6 +123,8 @@ public class Ejemplo : MonoBehaviour
         {
             print("PEW PEW!");
         }
+
+        print(collision.gameObject.layer);
     }
 
     // mientras se sigan tocando

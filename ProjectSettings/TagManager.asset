@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemigo
+  - Ladrillo
+  - Proyectil
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - cannon
   - Water
   - UI
-  - 
-  - 
+  - Enemigo
+  - proyectil
   - 
   - 
   - 
