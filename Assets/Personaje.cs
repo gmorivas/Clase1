@@ -48,6 +48,6 @@ public class Personaje : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         
-        print("COLISION CON: " + hit.gameObject.name);
+        //print("COLISION CON: " + hit.gameObject.name);
     }
 }
