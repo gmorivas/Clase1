@@ -14,6 +14,8 @@ public class Patrullero : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private int waypointActual;
 
+    private ComponenteDemo componenteDemo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,9 @@ public class Patrullero : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.destination = ruta[waypointActual].position;
         StartCoroutine(verificarSiguienteObjetivo());
+
+        // TODOS los scripts que agreguemos a un gameobject son componentes
+        componenteDemo = GetComponent<ComponenteDemo>();
     }
 
     // Update is called once per frame
@@ -39,6 +44,11 @@ public class Patrullero : MonoBehaviour
             // qué tan frecuente repetir lógica?
             // lo más espaciada posible mientras siga sirviendo
             yield return new WaitForSeconds(0.3f);
+
+            // NOTAS DE ESTE ROLLO - 
+            // podemos acceder a métodos de otro componente si son públicos
+            // lo mismo con los valores (atributos)
+            componenteDemo.MetodoAccesibleATodos(componenteDemo.vida + "");
 
             float distancia = Vector3.Distance(transform.position, ruta[waypointActual].position);
 

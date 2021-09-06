@@ -9,6 +9,7 @@ public class Cannon : MonoBehaviour
 
     public GameObject original;
     public Transform referencia;
+    public float fuerzaProyectil;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,16 @@ public class Cannon : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)){
 
-            Instantiate(original, referencia.position, referencia.rotation);
+            // aquí es donde clonamos
+            // cómo obtenemos referencia a un objeto recién creado?
+            GameObject nuevo = Instantiate(original, referencia.position, referencia.rotation);
+
+            // Importante: objeto de tipo game object hace referencia al gameobject completo
+            // osea, no a un componente en específico
+            print(nuevo.layer + " " + nuevo.tag);
+
+            Proyectil nuevoProyectil = nuevo.GetComponent<Proyectil>();
+            nuevoProyectil.force = fuerzaProyectil;
         }
     }
 }
