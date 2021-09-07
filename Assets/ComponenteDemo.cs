@@ -24,6 +24,6 @@ public class ComponenteDemo : MonoBehaviour
     // función
     public void MetodoAccesibleATodos(string mensaje){
 
-        print(mensaje);
+        //print(mensaje);
     }
 }

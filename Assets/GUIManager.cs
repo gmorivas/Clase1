@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
+
+    public Text textito;
+    public Slider slider;
+    public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +25,20 @@ public class GUIManager : MonoBehaviour
 
         print("CLICK");
 
-        if(Time.timeScale == 0)
+        if(Time.timeScale == 0){
             Time.timeScale = 1;
-        else
+            textito.text = "DESPAUSADO";
+        }            
+        else{
             Time.timeScale = 0;
+            textito.text = "PAUSADO";
+        }
+            
     }
 
-    public void SliderMovido(float valor) {
+    public void SliderMovido() {
 
-        print("valor movido: " + valor);
+        print("valor movido: " + slider.value);
+        textito.text = slider.value + "";
     }
 }
